@@ -1,7 +1,6 @@
 package com.pahanaedu.servlet;
 
 import com.pahanaedu.facade.BillingSystemFacade;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,5 +38,9 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("error", "Database error");
             request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
         }
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
     }
 }
